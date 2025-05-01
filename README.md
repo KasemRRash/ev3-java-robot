@@ -32,6 +32,16 @@ Autonomes Fahren anhand globaler Koordinaten 🚧
 
 Ich halte euch auf dem Laufenden :)
 
+
+**Installation**
+
+![Screenshot 2025-04-29 123859](https://github.com/user-attachments/assets/c8bc5e3e-d0df-46d3-92a1-4cb8da550e96)
+
+
+![Screenshot 2025-04-29 130317](https://github.com/user-attachments/assets/8b6c078d-8a95-4f1a-88fb-11ba155104b0)
+
+
+
 **Quellen & Links**
 leJOS EV3 API Documentation - https://lejos.sourceforge.io/ev3/docs/
 Oracle, Getting Started Using Java RMI.
