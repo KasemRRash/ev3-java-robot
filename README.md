@@ -41,9 +41,10 @@ Ich halte euch auf dem Laufenden.
 
 Die Installation erfolgt mit der von der Hochschule bereitgestellten Entwicklungsumgebung. Nach dem Hochladen der Programme auf den EV3 erfolgt die Ausführung direkt auf dem Roboter.
 
-![Screenshot 2025-04-29 123859](https://github.com/user-attachments/assets/c8bc5e3e-d0df-46d3-92a1-4cb8da550e96)
+<img src="https://github.com/user-attachments/assets/c8bc5e3e-d0df-46d3-92a1-4cb8da550e96" alt="Screenshot 1" width="600"/>
 
-![Screenshot 2025-04-29 130317](https://github.com/user-attachments/assets/8b6c078d-8a95-4f1a-88fb-11ba155104b0)
+<img src="https://github.com/user-attachments/assets/8b6c078d-8a95-4f1a-88fb-11ba155104b0" alt="Screenshot 2" width="600"/>
+
 
 ---
 
