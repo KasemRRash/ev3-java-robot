@@ -1,47 +1,61 @@
-# lego-roboter
-LEGO Mindstorms EV3-Robotern mit Java und der leJOS-Bibliothek
+# ev3-java-robot
 
-**Kurze Beschreibung**
+**LEGO Mindstorms EV3 mit Java und leJOS**
 
-Dieses Projekt ist Teil eines Hochschulkurses im Bereich Roboterprogrammierung und findet an der Hochschule statt. Wir arbeiten mit bereitgestellten LEGO Mindstorms EV3-Robotern und nutzen die Infrastruktur sowie Softwaretools der Hochschule, um die gelernte Theorie direkt praktisch umzusetzen.
+Dieses Projekt entstand im Rahmen eines Hochschulkurses zur Robotik-Programmierung an der Hochschule Bremerhaven. Wir arbeiten mit LEGO Mindstorms EV3-Robotern und setzen die Theorie direkt in die Praxis um – programmiert in Java mit der leJOS-Bibliothek.
 
-**Linienfolger mit LEGO & Java**
+---
 
-Wir bauen einen autonomen Roboter, der mithilfe eines Farbsensors einer schwarzen Linie folgt. Die Grundlage bildet der LEGO Mindstorms EV3, den wir mit Java und der leJOS-Bibliothek programmieren. So haben wir Zugriff auf Sensoren, Motoren und können die Logik präzise steuern.
+## Projektziel
 
-Was wir bisher geschafft haben:
+Ziel ist es, autonome Fahrfunktionen zu entwickeln – konkret: ein Linienfolger-Roboter, der mithilfe eines Farbsensors einer Linie zuverlässig folgt. Durch den Einsatz von Java und leJOS erhalten wir vollständigen Zugriff auf Sensorik, Motorik und Steuerlogik.
 
-✅ Der Roboter fährt stabil auf der Linie und reagiert auf Helligkeitsänderungen. ➕ Sensor ist kalibriert, Motorsteuerung reagiert dynamisch.
+---
 
-**To-Do**
-Ansteuerung von Motoren und Sensoren ✅
+## Bisherige Fortschritte
 
-Erstes „autonomes“ Fahren entlang einer Markierung ✅
+- Ansteuerung von Motoren und Sensoren – **abgeschlossen**
+- Erstes autonomes Fahren entlang einer Markierung – **abgeschlossen**
+- Kalibrierung des Farbsensors – **abgeschlossen**
+- Reaktion auf Helligkeitsänderungen – **stabil implementiert**
+- Motorsteuerung – **dynamisch angepasst**
 
-Kalibrierung ✅
+---
 
-Einsatz eines PID-Reglers zur Fahrverbesserung 🚧
+## Nächste Schritte
 
-Kolonnenfahren (mehrere Roboter in Formation) 🚧
+- Einsatz eines PID-Reglers zur präziseren Linienverfolgung  
+- Kolonnenfahren mit mehreren Robotern  
+- Alternativ: Hinderniserkennung und Ausweichverhalten  
+- Odometrie-basierte Positionsbestimmung  
+- Nutzung eines Satellitensystems zur Lokalisierung  
+- Globales autonomes Fahren anhand von Koordinaten
 
-Alternative: Ausweichen vor einem Hindernis statt Kolonnenfahren 🚧
+---
 
-Positionsbestimmung durch Odometrie 🚧
+Ich halte euch auf dem Laufenden.
 
-Positionsbestimmung mithilfe eines Satellitensystems 🚧
+---
 
-Autonomes Fahren anhand globaler Koordinaten 🚧
+## Installation & Screenshots
 
-Ich halte euch auf dem Laufenden :)
-
-
-**Installation**
+Die Installation erfolgt mit der von der Hochschule bereitgestellten Entwicklungsumgebung. Nach dem Hochladen der Programme auf den EV3 erfolgt die Ausführung direkt auf dem Roboter.
 
 ![Screenshot 2025-04-29 123859](https://github.com/user-attachments/assets/c8bc5e3e-d0df-46d3-92a1-4cb8da550e96)
 
-
 ![Screenshot 2025-04-29 130317](https://github.com/user-attachments/assets/8b6c078d-8a95-4f1a-88fb-11ba155104b0)
 
+---
+
+## Technologien
+
+- LEGO Mindstorms EV3
+- Java
+- leJOS EV3-Bibliothek
+- Sensorik: EV3-Farbsensor
+- Ansteuerung über PC via USB / Bluetooth
+
+---
 
 
 **Quellen & Links**
