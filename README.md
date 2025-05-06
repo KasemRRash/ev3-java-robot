@@ -4,6 +4,9 @@
 
 Dieses Projekt entstand im Rahmen eines Hochschulkurses zur Robotik-Programmierung an der Hochschule Bremerhaven. Wir arbeiten mit LEGO Mindstorms EV3-Robotern und setzen die Theorie direkt in die Praxis um – programmiert in Java mit der leJOS-Bibliothek.
 
+<img src="https://github.com/user-attachments/assets/fb85d6c1-320e-4b77-8510-90a3d8fd66b7" width="600"/>
+
+
 ---
 
 ## Projektziel
@@ -32,6 +35,7 @@ Ziel ist es, autonome Fahrfunktionen zu entwickeln – konkret: ein Linienfolger
 - Globales autonomes Fahren anhand von Koordinaten
 
 ---
+<img src="https://github.com/user-attachments/assets/8f2a248d-5c47-4a80-9a83-dc191a557ac3" width="600"/>
 
 Ich halte euch auf dem Laufenden.
 
