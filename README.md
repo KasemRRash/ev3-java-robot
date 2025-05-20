@@ -58,8 +58,8 @@ Die Installation erfolgt mit der von der Hochschule bereitgestellten Entwicklung
 - Java
 - leJOS EV3-Bibliothek
 - Sensorik: EV3-Farbsensor
-- Ansteuerung über PC via USB / Bluetooth
-
+- Ansteuerung über PC / Wifi
+- 
 ---
 
 
