@@ -21,13 +21,13 @@ public class tester {
 	public static void main(String[]args) {
 		int i = 0; 
 		
-		double white = 0.7; 
-		double black = 0.3; 
+		double white = 1.0; 
+		double black = 0.00; 
 		double threshold = (black + white) / 2.0;
 		System.out.println("Schwelle: " + threshold); 	
 		
 		while(i!=2) {
-			double light = 0.7; 
+			double light = 0.5; 
 			getError( light, threshold);
 			System.out.println("While Schleife - e: " + e); 
 			 
@@ -74,12 +74,13 @@ public class tester {
     
     private static double getError(double is, double should) {
     	
+    	e = should - is; 
+    	
     	if (e > 1 ) {
     		e = 1; 
     	}else if (e < -1){
     		e = -1; 
     	}
-    	e = should - is; 
     	
     	System.out.println("getError Methode - e: " + e); 
     	
@@ -114,5 +115,8 @@ public class tester {
     		}
     		System.out.println("sleft wenn turn kleiner Null: " + sleft);
     	}
+    	
+    	System.out.println("sright Kontrolle: " + sright); 
+    	System.out.println("sleft Kontrolle: " + sleft); 
     }
 }

@@ -44,5 +44,7 @@ public class Robot {
         Button.LEDPattern(1);
         Sound.beepSequenceUp();
         System.out.println("Ready!");
+        
+        //s4 ultrasensor
     }
 }
