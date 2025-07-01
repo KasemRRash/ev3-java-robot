@@ -23,7 +23,7 @@ public class EV3Controller {
 
             int currentCommand = getCurrentCommand();
 
-            // Taste losgelassen? → Bewegung beenden + Vektor speichern
+            // Taste losgelassen? = Bewegung beenden + Vektor speichern
             if (currentCommand != lastCommand && lastCommand != -1) {
                 float distance = motorTracker.getDistanceTraveled();
 
@@ -32,7 +32,7 @@ public class EV3Controller {
                     motorTracker.reset();
                 }
 
-                // Wenn Richtungstaste gedrückt war → neuen Winkel merken
+                // Wenn Richtungstaste gedrückt war  = neuen Winkel merken
                 if (lastCommand == Button.LEFT.getId() || lastCommand == Button.RIGHT.getId()) {
                     lastDirectionAngle = gyroTracker.getNormalizedAngle();
                 }

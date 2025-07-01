@@ -5,31 +5,45 @@ public class PathRecorder {
     private float currentX = 0;
     private float currentY = 0;
 
+    /*
     public void recordStep(int angle, float distance) {
-        double radians = Math.toRadians(angle); // Winkel in Bogenmaß
+        double radians = Math.toRadians(angle);
 
-        float dx = (float) (Math.cos(radians) * distance); // x-Anteil
-        float dy = (float) (Math.sin(radians) * distance); // y-Anteil
+        float dx = (float) (Math.cos(radians) * distance);
+        float dy = (float) (Math.sin(radians) * distance);
 
         currentX += dx;
         currentY += dy;
 
-        path.add(new VectorStep(currentX, currentY, angle));
-        System.out.printf("Recorded: %s%n", path.get(path.size() - 1));
+        VectorStep step = new VectorStep(currentX, currentY, angle);
+        path.add(step);
+
+        System.out.printf("📍 Gespeichert: %s\n", step);
     }
+    */
+    
+    public void recordStep(int angle, float distance) {
+        if (distance < 1.0f) {
+            // Nur Drehung – speichere neuen Winkel, aber Position bleibt gleich
+            path.add(new VectorStep(currentX, currentY, angle));
+            System.out.printf("📐 Nur Drehung: Winkel %d°, Pos bleibt %.1f/%.1f\n", angle, currentX, currentY);
+        } else {
+            // Bewegung – Position verändern anhand des Winkels
+            double radians = Math.toRadians(angle);
+            float dx = (float) (Math.cos(radians) * distance);
+            float dy = (float) (Math.sin(radians) * distance);
+
+            currentX += dx;
+            currentY += dy;
+
+            path.add(new VectorStep(currentX, currentY, angle));
+            System.out.printf("➡️ Bewegung: Winkel %d°, Δx=%.1f, Δy=%.1f → Neu: %.1f/%.1f\n", angle, dx, dy, currentX, currentY);
+        }
+    }
+
 
     public ArrayList<VectorStep> getPath() {
         return path;
-    }
-
-    public ArrayList<VectorStep> getInvertedPath() {
-        ArrayList<VectorStep> reversed = new ArrayList<>();
-        for (int i = path.size() - 1; i >= 0; i--) {
-            VectorStep step = path.get(i);
-            int reversedAngle = normalizeAngle(step.angle + 180);
-            reversed.add(new VectorStep(step.x, step.y, reversedAngle));
-        }
-        return reversed;
     }
 
     public void clear() {
@@ -38,17 +52,10 @@ public class PathRecorder {
         currentY = 0;
     }
 
-    private int normalizeAngle(int angle) {
-        angle = angle % 360;
-        if (angle > 180) angle -= 360;
-        if (angle < -180) angle += 360;
-        return angle;
-    }
-
     public void printSteps() {
-        System.out.println("Gespeicherter Pfad:");
-        for (VectorStep s : path) {
-            System.out.println(s);
+        System.out.println("📋 Aufgezeichneter Pfad:");
+        for (VectorStep step : path) {
+            System.out.println(step);
         }
     }
 }

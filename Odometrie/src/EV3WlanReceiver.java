@@ -1,6 +1,8 @@
 import java.io.*;
 import java.net.*;
 
+import lejos.hardware.Button;
+
 public class EV3WlanReceiver {
     private final MotorTracker motor;
     private final GyroTracker gyro;
@@ -20,8 +22,18 @@ public class EV3WlanReceiver {
         try {
             server = new ServerSocket(6789);
             System.out.println("Warte auf WLAN-Verbindung...");
+            
+            if (Button.ESCAPE.isDown()) {
+                System.out.println("❌ ESC gedrückt – Programm beendet.");
+                motor.close();
+                gyro.close();
+                System.exit(0);
+            }
+            
             client = server.accept();
             System.out.println("Client verbunden.");
+            
+            
 
             in = new BufferedReader(new InputStreamReader(client.getInputStream()));
             String lastCommand = "";
@@ -52,6 +64,8 @@ public class EV3WlanReceiver {
                 }
 
                 lastCommand = command;
+                
+                if (Button.ESCAPE.isDown()) break;
             }
 
         } catch (IOException e) {
