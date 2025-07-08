@@ -1,6 +1,6 @@
 import lejos.hardware.Button;
+
 import lejos.hardware.Sound;
-import lejos.hardware.lcd.LCD;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,13 +13,6 @@ public class Main {
         motor.reset();
 
         System.out.println("Start bei Gyro-Winkel: " + gyro.getCurrentAngle());
-        
-        /*
-         // === Manuelle Steuerung am Brick ===
-        System.out.println("Brick-Steuerung: ESC zum Beenden");
-        EV3Controller controller = new EV3Controller(motor, gyro, recorder);
-        controller.controlLoop();
-        */
 
         // === WLAN-Steuerung vom PC ===
         System.out.println("Warte auf WLAN-Steuerung...");
@@ -33,14 +26,14 @@ public class Main {
         System.out.println("Taste drücken zum Start der Rückfahrt...");
         Button.waitForAnyPress();
 
-        System.out.println("🔁 Starte Rückfahrt zum Ursprung...");
+        System.out.println("Starte Rückfahrt zum Ursprung...");
         ReturnNavigator returner = new ReturnNavigator(motor, gyro, recorder);
         returner.returnToStart();
 
         // === Abschluss ===
-        System.out.println("Rückfahrt abgeschlossen.");
-        System.out.println("Gyro-Endwinkel: " + gyro.getCurrentAngle());
-        System.out.println("Taste drücken zum Beenden.");
+        //System.out.println("Rückfahrt abgeschlossen.");
+        //System.out.println("Gyro-Endwinkel: " + gyro.getCurrentAngle());
+        //System.out.println("Taste drücken zum Beenden.");
         Button.waitForAnyPress();
 
         motor.close();

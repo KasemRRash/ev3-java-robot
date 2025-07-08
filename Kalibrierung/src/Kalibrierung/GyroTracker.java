@@ -1,3 +1,4 @@
+package Kalibrierung;
 import lejos.hardware.port.SensorPort;
 import lejos.hardware.sensor.EV3GyroSensor;
 import lejos.robotics.SampleProvider;
@@ -66,7 +67,7 @@ public class GyroTracker {
     }
 
     /** Interne Winkel-Normalisierung auf [-180°, 180°] */
-    private int normalizeAngle(int angle) {
+    int normalizeAngle(int angle) {
         angle = angle % 359;
         if (angle > 179) angle -= 359;
         if (angle < -179) angle += 359;

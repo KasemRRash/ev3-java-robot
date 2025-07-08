@@ -18,6 +18,10 @@ public class VectorStep {
         float dy = other.y - this.y;
         return (float) Math.sqrt(dx * dx + dy * dy);
     }
+    
+    public float getAngle() {
+        return angle;
+    }
 
     private int normalizeAngle(int angle) {
         angle = angle % 359;

@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 import lejos.hardware.Button;
+import lejos.hardware.Sound;
 
 public class ReturnNavigator {
     private final MotorTracker motorTracker;
@@ -16,12 +17,12 @@ public class ReturnNavigator {
     public void returnToStart() {
         ArrayList<VectorStep> path = recorder.getPath();
 
-        if (path.size() < 2) {
-            System.out.println("⚠️ Pfad zu kurz für Rückfahrt.");
+        /*if (path.size() < 2) {
+            System.out.println("Pfad zu kurz für Rückfahrt.");
             return;
-        }
+        }*/
 
-        System.out.println("🔙 Starte exakte Rückfahrt mit Drehung...");
+        System.out.println("Starte exakte Rückfahrt mit Drehung...");
 
         for (int i = path.size() - 1; i > 0; i--) {
             VectorStep from = path.get(i);
@@ -37,26 +38,36 @@ public class ReturnNavigator {
             int currentGyro = gyroTracker.getNormalizedAngle();
             int angleDiff = gyroTracker.getAngleDifference(normalizedTarget);
 
-            System.out.printf("📌 Schritt %d → Zielrichtung: %d°, Gyro: %d°, Δ=%d° | Distanz: %.1f mm\n",
+            System.out.printf("Schritt %d → Zielrichtung: %d Grad, Gyro: %d Grad, Winkel=%d Grad | Distanz: %.1f mm\n",
                     i, normalizedTarget, currentGyro, angleDiff, distance);
 
-            // 1. Drehe dich in Rückrichtung
-            rotateBy(angleDiff);
+         // Drehe nur, wenn eine echte Drehung nötig ist (also z. B. vom vorherigen Schritt)
+            if (Math.abs(angleDiff) > 10) {
+                rotateBy(angleDiff);
+            }
 
-            // 2. Fahre exakt rückwärts
+            // Immer rückwärts fahren
             motorTracker.travelBackward((float) distance);
+
+            
+            if (i == 1) {
+            		motorTracker.stop();
+            		System.out.println("Gefahren & Endpunkt erreicht");
+            		Sound.beepSequence();
+            		break;
+            }
             
             if (Button.ESCAPE.isDown()) break;
         }
 
-        System.out.println("✅ Rückfahrt abgeschlossen.");
+        System.out.println("Rückfahrt abgeschlossen.");
         
     }
 
     private void rotateBy(int angleDiff) {
-        if (Math.abs(angleDiff) > 3) {
+        //if (Math.abs(angleDiff) > 3) {
             motorTracker.rotateBy(angleDiff);
-        }
+        //}
     }
 
     private int normalizeAngle(int angle) {

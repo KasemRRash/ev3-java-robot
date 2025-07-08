@@ -8,10 +8,10 @@ public class PathRecorder {
     public void recordStep(int angle, float distance) {
         angle = ((angle % 360) + 360) % 360;
 
-        if (distance < 1.0f) {
+        /*if (distance < 1.0f) {
             path.add(new VectorStep(currentX, currentY, angle));
-            System.out.printf("📐 Nur Drehung: Winkel %d°, Pos bleibt %.1f/%.1f\n", angle, currentX, currentY);
-        } else {
+            System.out.printf("Nur Drehung: Winkel %d Grad, Pos bleibt %.1f/%.1f\n", angle, currentX, currentY);
+        } else {*/
             float dx = cosFromDegree(angle) * distance;
             float dy = sinFromDegree(angle) * distance;
 
@@ -19,8 +19,8 @@ public class PathRecorder {
             currentY += dy;
 
             path.add(new VectorStep(currentX, currentY, angle));
-            System.out.printf("➡️ Bewegung: Winkel %d°, Δx=%.1f, Δy=%.1f → Neu: %.1f/%.1f\n", angle, dx, dy, currentX, currentY);
-        }
+            System.out.printf("Bewegung: Winkel %d Grad, y=%.1f, x=%.1f => Neu: %.1f/%.1f\n", angle, dy, dx, currentY, currentX);
+        //}
     }
 
     private float sinFromDegree(int angle) {
@@ -65,7 +65,7 @@ public class PathRecorder {
     }
 
     public void printSteps() {
-        System.out.println("📋 Aufgezeichneter Pfad:");
+        System.out.println("Aufgezeichneter Pfad:");
         for (VectorStep step : path) {
             System.out.println(step);
         }

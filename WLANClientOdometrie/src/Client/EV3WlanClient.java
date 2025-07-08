@@ -58,7 +58,7 @@ public class EV3WlanClient extends JFrame implements KeyListener {
 
     public static void main(String[] args) {
         try {
-            new EV3WlanClient("192.168.2.46", 6789); // <- IP anpassen
+            new EV3WlanClient("192.168.2.46", 6789);
         } catch (IOException e) {
             System.err.println("Verbindung fehlgeschlagen: " + e.getMessage());
         }

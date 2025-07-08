@@ -1,4 +1,4 @@
-package robotik;
+
 import lejos.hardware.port.Port;
 import lejos.hardware.sensor.EV3ColorSensor;
 import lejos.robotics.SampleProvider;
@@ -25,11 +25,13 @@ import lejos.robotics.SampleProvider;
             samples = new float[3];
         }
 
+ 
         public double getReflectedRed() {
             sampleProviderRed.fetchSample(samples, 0);
 
             return samples[0];
         }
+
 
         public double[] getReflectedRGB() {
             sampleProviderRGB.fetchSample(samples, 0);
@@ -43,3 +45,4 @@ import lejos.robotics.SampleProvider;
             return (int) samples[0];
         }
     }
+

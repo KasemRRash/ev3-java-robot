@@ -24,7 +24,7 @@ public class EV3WlanReceiver {
             System.out.println("Warte auf WLAN-Verbindung...");
             
             if (Button.ESCAPE.isDown()) {
-                System.out.println("❌ ESC gedrückt – Programm beendet.");
+                System.out.println("ESC gedrückt – Programm beendet.");
                 motor.close();
                 gyro.close();
                 System.exit(0);
@@ -40,15 +40,18 @@ public class EV3WlanReceiver {
             int lastAngle = gyro.getNormalizedAngle();
 
             String command;
+            
+            recorder.recordStep(lastAngle, 0);
+            
             while ((command = in.readLine()) != null) {
                 command = command.trim();
 
                 if (!command.equals(lastCommand) && !lastCommand.equals("")) {
                     float distance = motor.getDistanceTraveled();
-                    if (distance > 1.0f) {
+                    //if (distance > 1.0f) {
                         recorder.recordStep(lastAngle, distance);
                         motor.reset();
-                    }
+                    //}
 
                     if (lastCommand.equals("LEFT") || lastCommand.equals("RIGHT")) {
                         lastAngle = gyro.getNormalizedAngle();
@@ -76,7 +79,7 @@ public class EV3WlanReceiver {
             
             motor.stop();
 
-            // Letzten Schritt speichern
+            
             float remaining = motor.getDistanceTraveled();
             if (remaining > 1.0f) {
                 recorder.recordStep(gyro.getNormalizedAngle(), remaining);
