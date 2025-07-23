@@ -4,6 +4,10 @@
 
 Dieses Projekt entstand im Rahmen eines Hochschulkurses zur Robotik-Programmierung an der Hochschule Bremerhaven. Wir arbeiten mit LEGO Mindstorms EV3-Robotern und setzen die Theorie direkt in die Praxis um – programmiert in Java mit der leJOS-Bibliothek.
 
+📽️ [Mein EV3-Roboter in Aktion](https://youtube.com/shorts/B4VAbEeE6EU?si=ltQsXwOHAPrjQkvS)
+
+
+
 <img src="https://github.com/user-attachments/assets/fb85d6c1-320e-4b77-8510-90a3d8fd66b7" width="600"/>
 
 
@@ -22,22 +26,17 @@ Ziel ist es, autonome Fahrfunktionen zu entwickeln – konkret: ein Linienfolger
 - Kalibrierung des Farbsensors – **abgeschlossen**
 - Reaktion auf Helligkeitsänderungen – **stabil implementiert**
 - Motorsteuerung – **dynamisch angepasst**
-
----
-
-## Nächste Schritte
-
-- Einsatz eines PID-Reglers zur präziseren Linienverfolgung  
-- Kolonnenfahren mit mehreren Robotern  
-- Alternativ: Hinderniserkennung und Ausweichverhalten  
-- Odometrie-basierte Positionsbestimmung  
-- Nutzung eines Satellitensystems zur Lokalisierung  
-- Globales autonomes Fahren anhand von Koordinaten
+- Einsatz eines PID-Reglers zur präziseren Linienverfolgung  -  **abgeschlossen**
+- Kolonnenfahren mit mehreren Robotern  -  **abgeschlossen**
+- Alternativ: Hinderniserkennung und Ausweichverhalten  - **abgeschlossen**
+- Odometrie-basierte Positionsbestimmung  - **abgeschlossen**
+- Nutzung eines Satellitensystems zur Lokalisierung  - **abgeschlossen**
+- Globales autonomes Fahren anhand von Koordinaten -  **abgeschlossen**
 
 ---
 <img src="https://github.com/user-attachments/assets/8f2a248d-5c47-4a80-9a83-dc191a557ac3" width="600"/>
 
-Ich halte euch auf dem Laufenden.
+
 
 ---
 
